@@ -1,25 +1,25 @@
 from tkinter import *
 from tkinter import messagebox
+from database import create_database, verify_login
+
+def login():
+    username = user.get()
+    password = passw.get()
+
+    if verify_login(username, password):
+        messagebox.showinfo("Berhasil", "Selamat Datang")
+        # Tambahkan kode untuk membuka layar beranda setelah login berhasil
+    else:
+        messagebox.showerror("Gagal", "Username atau password salah")
+
+# Panggil fungsi create_database untuk membuat atau mengakses database
+create_database()
 
 root = Tk()
 root.title('Login')
 root.geometry('925x500+300+200')
 root.configure(bg="#fff")
 root.resizable(False,False)
-def login() :
-    username = user.get()
-    password = passw.get()
-    if username == 'admin' and password=='admin123':
-        screen = Toplevel(root)
-        screen.title('Home')
-        screen.geometry('925x500+300+200')
-        screen.config(bg='white')
-
-        Label(screen,text='Selamat Datang',bg='#fff',font=('Calibri(Body)',50,'bold')).pack(expand=True)
-        screen.mainloop()
-
-    elif username!= 'admin' and password!='admin123':
-        messagebox.showerror("invalid","invalid username dan password")
 
 img = PhotoImage(file='login.png')
 Label(root,image=img,bg='white').place(x=50,y=50)
