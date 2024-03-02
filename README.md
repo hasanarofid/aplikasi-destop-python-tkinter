@@ -1,5 +1,6 @@
 # aplikasi-destop-python-tkinter
 
 * demo
-![demo](demo/demo.png)
+![login](demo/login.png)
+![dashboard](demo/dashboard.png)
 
