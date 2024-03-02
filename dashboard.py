@@ -49,9 +49,9 @@ class Dashboard(tk.Tk):
             widget.destroy()
 
         # Membuat konten halaman login
-        label = ttk.Label(self.content, text="Login Page", font=("Helvetica", 20))
-        label.pack(pady=100)
-
+            from login import Login 
+            login_page2= Login()
+            login_page2.mainloop()
     def logout(self):
         if messagebox.askokcancel("Logout", "Apakah Anda yakin ingin logout?"):
             # Menutup jendela utama
@@ -65,7 +65,10 @@ class Dashboard(tk.Tk):
         # Fungsi untuk memeriksa apakah sesi pengguna sudah login atau tidak
         # Di sini, fungsi ini akan selalu mengembalikan False untuk contoh sederhana
         # Anda dapat menambahkan logika sesi pengguna yang sesungguhnya di sini
-        return False
+        # return False
+        logged_in = False
+        if not logged_in:
+            self.show_login()
 
 if __name__ == "__main__":
     app = Dashboard()
